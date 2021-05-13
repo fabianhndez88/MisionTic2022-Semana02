@@ -1,6 +1,6 @@
 """ Taller 2.2 Espacios de Color #
-    Tu nombre aquí
-    Mayo xx-XX """
+    Fabián Humberto Hernández Castaño
+    Mayo 12-05 2021
 
 # Definición de Funciones (Dividir)
 
@@ -52,33 +52,36 @@ def convertir_yiq_a_ycbcr(y,i,q):
 def convertir_rva_a_yiq(r,v,a):
   #TODO: comentarios
   #TODO: instrucciones
-  y=0
-  i=0
-  q=0
+  y=(0.299*r)+(0.587*v)+(0.114*a)
+  i=(0.596*r)-(0.275*v)+0.321*a)
+  q=(0.212*r)-(0.528*v)+(0.311*a)
   return y,i,q
 #-------------------------------------------
 def convertir_rva_a_ycbcr(r,v,a):
   #TODO: comentarios
   #TODO: instrucciones
-  y=0
-  cb=0
-  cr=0
+  y=(0.299*r)+(0.587*v)+(0.114*a)
+  cb=(0.1687*r)+(0.3313*v)+(0.5*a)
+  cr=(0.5*r)-(0.418*v)+(0.0813*a)
   return y,cb,cr
 #-------------------------------------------
 def convertir_ycbcr_a_yiq(y,cb,cr):
   #TODO: comentarios
   #TODO: instrucciones
-  y=0
-  i=0
-  q=0
-  return y,i,q 
+  r=(1*y)+(0*cb)+(1.402*cr)
+  v=(1*y)+(0.344*cb)-(0.714*cr)
+  a=(1*y)-((1.772*cb)+(0*Cr)
+  y=(0.299*r)+(0.587*v)+(0.114*a)
+  i=(0.596*r)-(0.275*v)+0.321*a)
+  q=(0.212*r)-(0.528*v)+(0.311*a)
+  return y,i,q
 
 def convertir_ycbcr_a_rva(y,cb,cr):
   #TODO: comentarios
   #TODO: instrucciones
-  r=0
-  v=0
-  a=0
+  r=(1*y)+(0*cb)+(1.402*cr)
+  v=(1*y)+(0.344*cb)-(0.714*cr)
+  a=(1*y)-((1.772*cb)+(0*Cr)
   return r,v,a 
 
 
@@ -105,7 +108,7 @@ cr = float(input("Digite el valor de Cr:"))
 
 #Llamado/invocación de funciones
 
-#Se utilizan otras variables para gurdar lo que retorna la funciòn
+#Se utilizan otras variables para guardar lo que retorna la funciòn
 #para no cambiar el valor de las entradas por teclado
 
 rt,vt,at= convertir_yiq_a_rva(y,i,q)
